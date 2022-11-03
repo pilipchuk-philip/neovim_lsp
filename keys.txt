@@ -3,3 +3,11 @@ Bookmarks
 ------------------------------------------------------------------
 mm - Open Bookmarks
 ma - Put Bookmarks
+
+------------------------------------------------------------------
+Text objects (Visual Mode)
+------------------------------------------------------------------ 
+['.'] = 'textsubjects-smart'
+[';'] = 'textsubjects-container-outer'
+['i;'] = 'textsubjects-container-inner'
+

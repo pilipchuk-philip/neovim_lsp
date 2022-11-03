@@ -130,6 +130,12 @@ return require('packer').startup(function()
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
   use 'b3nj5m1n/kommentary'
+
+  -----------------------------------------------------------
+  -- Textsubjects
+  -----------------------------------------------------------
+  use 'RRethy/nvim-treesitter-textsubjects'
+
   -----------------------------------------------------------
   -- PYTHON
   -----------------------------------------------------------
