@@ -1,17 +1,17 @@
--- ------------------------------------------- 
+-- -------------------------------------------
 -- Variables
 -- -------------------------------------------
 local cmd = vim.cmd             -- execute Vim commands
 local exec = vim.api.nvim_exec  -- execute Vimscript
 local g = vim.g                 -- global variables
 local opt = vim.opt             -- global/buffer/windows-scoped options
- 
--- ------------------------------------------- 
+
+-- -------------------------------------------
 -- Theme
 -- -------------------------------------------
 cmd[[colorscheme tokyonight-moon]]
 
--- ------------------------------------------- 
+-- -------------------------------------------
 -- Theme Config
 -- -------------------------------------------
 g.tokyonight_style = "storm"
@@ -22,7 +22,7 @@ g.tokyonight_dark_sidebar = true
 g.tokyonight_lualine_bold = true
 g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
 
--- ------------------------------------------- 
+-- -------------------------------------------
 -- Base
 -- -------------------------------------------
 opt.cursorline = true         -- Подсветка строки с курсором

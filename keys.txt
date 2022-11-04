@@ -1,21 +1,14 @@
 ------------------------------------------------------------------
-Bookmarks
-------------------------------------------------------------------
-mm - Open Bookmarks
-ma - Put Bookmarks
-
-------------------------------------------------------------------
-Text objects (Visual Mode)
+Pannels
 ------------------------------------------------------------------ 
-['.'] = 'textsubjects-smart'
-[';'] = 'textsubjects-container-outer'
-['i;'] = 'textsubjects-container-inner'
+[Bookmarks] mm - add
+[Bookmarks] ma - open 
 
 ------------------------------------------------------------------
-LspSaga objects (Visual Mode)
+Editing Commands
 ------------------------------------------------------------------ 
+[DOCUMENTATION DOC] (Silent)  "K"
+[RENAME IN FILE] (Silent)     "gr"
+----- Text objects (Visual Mode) ---------------------------------
+[EXTRACT REGION](Visual) ['.']
 
-keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
--- Rename
-keymap("n", "gr", "<cmd>Lspsaga rename<CR>", { silent = true })
- 

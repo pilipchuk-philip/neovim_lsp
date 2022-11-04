@@ -35,4 +35,3 @@ require('plugins.lsp.tsscript')
 -----------------------------------------------------------
 require('keymaps.base')
 require('keymaps.plugins')
-
