@@ -10,80 +10,67 @@ return require('packer').startup(function()
   -------------------------------------------------
   use 'folke/tokyonight.nvim'
   use 'ryanoasis/vim-devicons'
+  use 'kyazdani42/nvim-web-devicons'
+  use 'nvim-lua/plenary.nvim'
   -- NERDTree
-  use {
-      'preservim/nerdtree',
-      requires = {
-          'kyazdani42/nvim-web-devicons', opt = true}
-  }         
+  use {'preservim/nerdtree', }
   -- Подсветка парных скобок
   use {'andymass/vim-matchup', event = 'VimEnter'}
-  -------------------------------------------------
   -- Нижняя панель
-  -------------------------------------------------
-  use {
-      'nvim-lualine/lualine.nvim',
-      requires = {'kyazdani42/nvim-web-devicons', opt = true}
-  }
-  -------------------------------------------------
+  use {'nvim-lualine/lualine.nvim',}
   -- Верхняя панель
-  -------------------------------------------------
   use {
   'kdheepak/tabline.nvim',
       requires = {
-          { 'hoob3rt/lualine.nvim', opt=true },
-          {'kyazdani42/nvim-web-devicons', opt = true}
+          {'hoob3rt/lualine.nvim', opt=true },
       }
   }
-  -------------------------------------------------
   -- TAGS панель
-  -------------------------------------------------
   use 'simrat39/symbols-outline.nvim'
   -- Считает кол-во совпадений при поиске
   use 'google/vim-searchindex'
+  -- Bookmarks
+  use 'MattesGroeger/vim-bookmarks'
+  -- Trouble
+  use {
+      "folke/trouble.nvim",
+      config = function()
+        require("trouble").setup {}
+      end
+    }
+  -- TODO Comments
+  use {
+      "folke/todo-comments.nvim",
+      config = function()
+        require("todo-comments").setup {
+            icons = true,
+        }
+      end
+  }
   -------------------------------------------------
   -- Core Plugins
   ------------------------------------------------- 
-  -- Bookmarks
-  use 'MattesGroeger/vim-bookmarks'
-  -- Даже если включена русская раскладка vim команды будут работать
-  use 'powerman/vim-plugin-ruscmd' -- Russian comand line expired
+  -- Russian comand line expired
+  use 'powerman/vim-plugin-ruscmd'
   use 'tpope/vim-surround'
   -- Может повторять через . vimsurround
   use 'tpope/vim-repeat'
   -- Закрывает автоматом скобки
   use 'cohama/lexima.vim'
--- cmd [[ nmap <C-_>   :call nerdcommenter#Comment('x', 'toggle') <CR>]]
-  use 'kyazdani42/nvim-web-devicons'
-  use {
-      "folke/trouble.nvim",
-      requires = "kyazdani42/nvim-web-devicons",
-      config = function()
-        require("trouble").setup {}
-      end
-}
-
-  use {
-  "folke/todo-comments.nvim",
-  requires = "nvim-lua/plenary.nvim",
-  config = function()
-    require("todo-comments").setup { icons = true,}
-  end
-  }
-
   use "glepnir/indent-guides.nvim"
+  use 'b3nj5m1n/kommentary'
+
   -----------------------------------------------------------
   -- SEARCH
   -----------------------------------------------------------
   use {
       'nvim-telescope/telescope.nvim', tag = '0.1.0',
     -- or                            , branch = '0.1.x',
-      requires = { {'nvim-lua/plenary.nvim',
+      requires = { {
       'nvim-lua/popup.nvim',
       'nvim-telescope/telescope-media-files.nvim'
   } }
   }
-  -- use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
   -----------------------------------------------------------
   -- Code Highlight 
   -----------------------------------------------------------
@@ -91,27 +78,26 @@ return require('packer').startup(function()
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
+  use 'RRethy/nvim-treesitter-textsubjects'
  -----------------------------------------------
- --  Auto Completion
+ --  LSP
  ----------------------------------------------- 
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer'
   use 'j-hui/fidget.nvim'
- -----------------------------------------------
  --  Auto Completion Utils
- ----------------------------------------------- 
- use {
-  "ray-x/lsp_signature.nvim",
- }
-
- -----------------------------------------------
- --  LSP SAGA
- ----------------------------------------------- 
+  use {
+    "ray-x/lsp_signature.nvim",
+  }
+ --  LSP Saga
  use 'glepnir/lspsaga.nvim'
  -----------------------------------------------
  -- Snippets
  -----------------------------------------------
-  use {"L3MON4D3/LuaSnip", config = function() require('plugins.snippets') end}
+  use {
+      "L3MON4D3/LuaSnip",
+      config = function() require('plugins.snippets.snippets') end
+  }
   use "rafamadriz/friendly-snippets"
  -----------------------------------------------
  -- CMP
@@ -135,33 +121,18 @@ return require('packer').startup(function()
   -------------------------------------------------
   -- GIT
   -------------------------------------------------
-  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+  use 'TimUntersberger/neogit'
   use {
-    'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
+    'lewis6991/gitsigns.nvim',
     config = function() require('gitsigns').setup() end
   }
   use 'airblade/vim-gitgutter'
   use 'tpope/vim-fugitive'
-  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
-
-  use 'b3nj5m1n/kommentary'
-
-  -----------------------------------------------------------
-  -- Textsubjects
-  -----------------------------------------------------------
-  use 'RRethy/nvim-treesitter-textsubjects'
-
-  -----------------------------------------------------------
-  -- PYTHON
-  -----------------------------------------------------------
+  use 'sindrets/diffview.nvim'
 
   -----------------------------------------------------------
   -- GO
   -----------------------------------------------------------
   use 'fatih/vim-go'
-
-  -----------------------------------------------------------
-  -- UI
-  -----------------------------------------------------------
 end)
 
