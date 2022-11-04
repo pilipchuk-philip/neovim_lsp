@@ -11,3 +11,11 @@ Text objects (Visual Mode)
 [';'] = 'textsubjects-container-outer'
 ['i;'] = 'textsubjects-container-inner'
 
+------------------------------------------------------------------
+LspSaga objects (Visual Mode)
+------------------------------------------------------------------ 
+
+keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
+-- Rename
+keymap("n", "gr", "<cmd>Lspsaga rename<CR>", { silent = true })
+ 

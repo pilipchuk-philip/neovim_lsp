@@ -70,10 +70,20 @@ return require('packer').startup(function()
     require("todo-comments").setup { icons = true,}
   end
   }
+
+  use "glepnir/indent-guides.nvim"
   -----------------------------------------------------------
   -- SEARCH
   -----------------------------------------------------------
-  
+  use {
+      'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    -- or                            , branch = '0.1.x',
+      requires = { {'nvim-lua/plenary.nvim',
+      'nvim-lua/popup.nvim',
+      'nvim-telescope/telescope-media-files.nvim'
+  } }
+  }
+  -- use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
   -----------------------------------------------------------
   -- Code Highlight 
   -----------------------------------------------------------
@@ -88,11 +98,16 @@ return require('packer').startup(function()
   use 'williamboman/nvim-lsp-installer'
   use 'j-hui/fidget.nvim'
  -----------------------------------------------
- --  Auto Completion
+ --  Auto Completion Utils
  ----------------------------------------------- 
  use {
   "ray-x/lsp_signature.nvim",
  }
+
+ -----------------------------------------------
+ --  LSP SAGA
+ ----------------------------------------------- 
+ use 'glepnir/lspsaga.nvim'
  -----------------------------------------------
  -- Snippets
  -----------------------------------------------

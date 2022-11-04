@@ -9,6 +9,7 @@ require('configs.ui')
 -----------------------------------------------------------
 require('plugins.plugins')
 require('plugins.autocomplete.cmp')
+require('plugins.autocomplete.lsp_saga')
 require('plugins.ui.lualine')
 require('plugins.ui.tabline')
 require('plugins.search.telescope')
