@@ -25,6 +25,7 @@ require('nvim-treesitter.configs').setup({
     "cpp",
     "cuda",
 	"json",
+    "jsonc",
     "julia",
 	"lua",
     "python",

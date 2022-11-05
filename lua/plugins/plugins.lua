@@ -57,9 +57,8 @@ return require('packer').startup(function()
   use 'tpope/vim-repeat'
   -- Закрывает автоматом скобки
   use 'cohama/lexima.vim'
-  use "glepnir/indent-guides.nvim"
   use 'b3nj5m1n/kommentary'
-
+  use "lukas-reineke/indent-blankline.nvim"
   -----------------------------------------------------------
   -- SEARCH
   -----------------------------------------------------------
@@ -118,6 +117,12 @@ return require('packer').startup(function()
     },
     config = function() require('plugins.cmp') end,
   })
+  -------------------------------------------------
+  -- Gist
+  -------------------------------------------------
+  use 'mattn/vim-gist'
+  use 'mattn/webapi-vim'
+
   -------------------------------------------------
   -- GIT
   -------------------------------------------------
