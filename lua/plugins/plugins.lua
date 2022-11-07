@@ -118,6 +118,10 @@ return require('packer').startup(function()
     config = function() require('plugins.cmp') end,
   })
   -------------------------------------------------
+  -- Code Run
+  -------------------------------------------------
+ use { 'michaelb/sniprun', run = 'bash ./install.sh'}
+  -------------------------------------------------
   -- Gist
   -------------------------------------------------
   use 'mattn/vim-gist'

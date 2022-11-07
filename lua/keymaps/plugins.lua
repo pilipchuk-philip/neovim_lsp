@@ -22,7 +22,6 @@ cmd [[ vmap <C-/>   <Plug>kommentary_visual_default ]]
 -----------------------------------------------------------------------
 cmd[[ nnoremap <silent>gD :lua vim.lsp.buf.declaration()<CR> ]]
 cmd[[ nnoremap <silent>gd :lua vim.lsp.buf.definition()<CR> ]]
--- cmd[[ nnoremap <silent>K :lua vim.lsp.buf.hover()<CR> ]]
 -- Hover Doc
 keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
 -- Rename in current file
@@ -39,7 +38,7 @@ cmd[[ nnoremap <silent>s :SymbolsOutline<CR> ]]
 -----------------------------------------------------------------------
 -- GIT 
 -----------------------------------------------------------------------   
-cmd[[ nnoremap <silent>g :Neogit<CR> ]]
+cmd[[ nnoremap <C-n> :Neogit<CR> ]]
 
 -----------------------------------------------------------------------
 -- Telescope 
@@ -50,6 +49,11 @@ cmd [[ nnoremap <C-e> :Telescope buffers<CR> ]]
 cmd [[ nnoremap <C-g> :Telescope git_status<CR> ]]
 cmd [[ nnoremap <C-l> :Telescope git_status<CR> ]]
 
+
+-----------------------------------------------------------------------
+--- Code Run
+----------------------------------------------------------------------- 
+keymap("v", "r", ":SnipRun<CR>", {silent = true})
 -----------------------------------------------------------------------
 --- LSP Saga
 ----------------------------------------------------------------------- 

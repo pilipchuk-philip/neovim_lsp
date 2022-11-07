@@ -10,12 +10,14 @@ require('configs.ui')
 require('plugins.plugins')
 require('plugins.autocomplete.cmp')
 require('plugins.autocomplete.lsp_saga')
+require('plugins.code.code_run')
 require('plugins.ui.lualine')
 require('plugins.ui.tabline')
 require('plugins.search.telescope')
 require('plugins.treesitter.treesitter')
 require('plugins.snippets.snippets')
 require('plugins.ui.fidget')
+---@diagnostic disable-next-line: different-requires
 require('plugins.ui.trouble')
 
 -----------------------------------------------------------

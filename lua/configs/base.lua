@@ -2,7 +2,6 @@
 -- Variables
 -- -------------------------------------------
 local cmd = vim.cmd             -- execute Vim commands
-local exec = vim.api.nvim_exec  -- execute Vimscript
 local g = vim.g                 -- global variables
 local opt = vim.opt             -- global/buffer/windows-scoped options
 
@@ -53,7 +52,7 @@ cmd[[set nowrap]]
 
 
 
-vim.o.virtualedit=all
+-- vim.o.virtualedit=all
 vim.o.hlsearch= true
 vim.o.incsearch= true
 vim.o.gdefault= true

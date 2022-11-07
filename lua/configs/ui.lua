@@ -29,3 +29,12 @@ opt.cursorline = true         -- Подсветка строки с курсор
 opt.number = true             -- Включаем нумерацию строк
 opt.termguicolors = true      --  24-bit RGB colors
 -- opt.so=999                    -- Курсор всегда в центре экрана
+
+-- -------------------------------------------
+-- Base
+-- -------------------------------------------
+cmd[[ set wildignore+=*__pycache__,*.pyc,*.o,*.obj,*.svn,*.swp,*.class,*.hg,*.DS_Store,*.min.* ]]
+
+-- Nerdtree config for wildignore
+cmd[[ let NERDTreeRespectWildIgnore=1 ]]
+
