@@ -91,3 +91,8 @@ cmd [[ set noswapfile  ]]                -- do not write annoying intermediate s
 cmd [[ set termencoding=utf-8 ]]
 cmd [[ set encoding=utf-8 ]]
 cmd [[ set fileformat=unix ]]
+
+-- -------------------------------------------
+-- Minus Triling whitespaces
+-- -------------------------------------------
+cmd [[ autocmd BufWritePre * :%s/\s\+$//e ]]

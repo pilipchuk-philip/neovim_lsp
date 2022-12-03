@@ -1,3 +1,4 @@
+-- vim.cmd[[ set clipboard=unnamedplus ]]
 ----------------------------------------------------------
 -- Configs
 -----------------------------------------------------------
@@ -17,7 +18,7 @@ require('plugins.search.telescope')
 require('plugins.treesitter.treesitter')
 require('plugins.snippets.snippets')
 require('plugins.ui.fidget')
----@diagnostic disable-next-line: different-requires
+require('plugins.ui.gitsings')
 require('plugins.ui.trouble')
 
 -----------------------------------------------------------

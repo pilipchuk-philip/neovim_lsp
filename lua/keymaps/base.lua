@@ -4,7 +4,10 @@ local cmd = vim.cmd             -- execute Vim commands
 --- COMMON 
 -----------------------------------------------------------------------
 cmd [[ let mapleader = "'" ]]
-cmd [[ vmap <C-c> "*y ]]
+-- if mac os
+-- cmd [[ vmap <C-c> "*y ]]
+cmd [[ vmap <C-c> "+y ]]
+
 cmd [[ nnoremap ; : ]]
 cmd [[ nnoremap p P ]]
 cmd [[ nnoremap ; : ]]
