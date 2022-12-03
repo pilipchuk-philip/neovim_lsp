@@ -10,7 +10,6 @@ require('configs.ui')
 require('plugins.plugins')
 require('plugins.autocomplete.cmp')
 require('plugins.autocomplete.lsp_saga')
-require('plugins.code.code_run')
 require('plugins.ui.lualine')
 require('plugins.ui.tabline')
 require('plugins.search.telescope')
@@ -19,6 +18,7 @@ require('plugins.snippets.snippets')
 require('plugins.ui.fidget')
 require('plugins.ui.gitsings')
 require('plugins.ui.trouble')
+require('plugins.ui.vista')
 
 -----------------------------------------------------------
 -- Languages LSP
