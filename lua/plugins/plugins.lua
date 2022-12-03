@@ -49,7 +49,7 @@ return require('packer').startup(function()
   }
   -------------------------------------------------
   -- Core Plugins
-  ------------------------------------------------- 
+  -------------------------------------------------
   -- Russian comand line expired
   use 'powerman/vim-plugin-ruscmd'
   use 'tpope/vim-surround'
@@ -71,7 +71,7 @@ return require('packer').startup(function()
   } }
   }
   -----------------------------------------------------------
-  -- Code Highlight 
+  -- Code Highlight
   -----------------------------------------------------------
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -80,7 +80,7 @@ return require('packer').startup(function()
   use 'RRethy/nvim-treesitter-textsubjects'
  -----------------------------------------------
  --  LSP
- ----------------------------------------------- 
+ -----------------------------------------------
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer'
   use 'j-hui/fidget.nvim'
@@ -131,10 +131,7 @@ return require('packer').startup(function()
   -- GIT
   -------------------------------------------------
   use 'TimUntersberger/neogit'
-  use {
-    'lewis6991/gitsigns.nvim',
-    config = function() require('gitsigns').setup() end
-  }
+  use 'lewis6991/gitsigns.nvim'
   use 'airblade/vim-gitgutter'
   use 'tpope/vim-fugitive'
   use 'sindrets/diffview.nvim'
