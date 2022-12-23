@@ -158,9 +158,103 @@ vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
 
 use {'romgrk/barbar.nvim', wants = 'nvim-web-devicons'}
  -----------------------------------------------------------
- -- Barbecue
+ -- NVIM Transporent
  -----------------------------------------------------------
 
+use 'xiyaowong/nvim-transparent'
+require("transparent").setup({
+  enable = true, -- boolean: enable transparent
+  extra_groups = { -- table/string: additional groups that should be cleared
+    "BufferLineTabClose",
+    "BufferlineBufferSelected",
+    "BufferLineFill",
+    "BufferLineBackground",
+    "BufferLineSeparator",
+    "BufferLineIndicatorSelected",
+  },
+  exclude = {}, -- table: groups you don't want to clear
+})
+ -----------------------------------------------------------
+ -- Easy Align
+ -----------------------------------------------------------
+ use {
+  'kkoomen/vim-doge',
+   run = ':call doge#install()'
+ }
+
+ -----------------------------------------------------------
+ -- Which Key
+ -----------------------------------------------------------
+use 'RRethy/vim-illuminate'
+require('illuminate').configure({
+     providers = {
+        'lsp',
+        'treesitter',
+        'regex',
+    },
+    delay = 100,
+    filetype_overrides = {},
+    filetypes_denylist = {
+        'dirvish',
+        'fugitive',
+    },
+    filetypes_allowlist = {},
+    modes_denylist = {},
+    modes_allowlist = {},
+    providers_regex_syntax_denylist = {},
+    providers_regex_syntax_allowlist = {},
+    under_cursor = true,
+    large_file_cutoff = nil,
+    large_file_overrides = nil,
+    min_count_to_highlight = 1,
+})
+------------------------------------------------------------
+-- Wilder
+------------------------------------------------------------
+use {
+  'gelguy/wilder.nvim',
+  requires = {
+    "kyazdani42/nvim-web-devicons", -- optional
+  },
+  config = function()
+  end,
+}
+require("wilder").setup({
+    modes = {':', '/', '?'},
+    next_key = '<TAB>',
+})
+require("wilder").set_option('renderer', require("wilder").popupmenu_renderer(
+    require("wilder").popupmenu_border_theme({
+    left = {' ', require("wilder").popupmenu_devicons()},
+    highlighter = require("wilder").basic_highlighter(),
+    min_width = '100%',
+    min_height = '20%',
+    max_height = '10%',
+    highlights = {
+      border = 'Normal', -- highlight to use for the border
+    },
+    border = 'rounded',
+  })
+  ))
+
+ -----------------------------------------------------------
+ -- lsp saga
+ -----------------------------------------------------------
+
+use({
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+    config = function()
+        local saga = require("lspsaga")
+        saga.init_lsp_saga({
+            -- your configuration
+        })
+    end,
+})
+
+ -----------------------------------------------------------
+ -- Barbecue
+ -----------------------------------------------------------
  use {
   "utilyre/barbecue.nvim",
   requires = {
@@ -172,59 +266,24 @@ use {'romgrk/barbar.nvim', wants = 'nvim-web-devicons'}
   config = function()
     require("barbecue").setup(
     {
-  ---whether to attach navic to language servers automatically
-  ---@type boolean
   attach_navic = true,
-
-  ---whether to create winbar updater autocmd
-  ---@type boolean
   create_autocmd = true,
-
-  ---buftypes to enable winbar in
-  ---@type string[]
   include_buftypes = { "" },
-
-  ---filetypes not to enable winbar in
-  ---@type string[]
   exclude_filetypes = { "toggleterm" },
-
   modifiers = {
-    ---filename modifiers applied to dirname
-    ---@type string
     dirname = ":~:.",
-
-    ---filename modifiers applied to basename
-    ---@type string
     basename = "",
   },
-
-  ---returns a string to be shown at the end of winbar
-  ---@type fun(bufnr: number): string
   custom_section = function()
     return ""
   end,
-
-  ---whether to replace file icon with the modified symbol when buffer is modified
-  ---@type boolean
   show_modified = true,
 
   symbols = {
-    ---modification indicator
-    ---@type string
     modified = "●",
-
-    ---truncation indicator
-    ---@type string
     ellipsis = "…",
-
-    ---entry separator
-    ---@type string
     separator = "",
   },
-
-  ---icons for different context entry kinds
-  ---`false` to disable kind icons
-  ---@type table<string, string>|false
   kinds = {
     File = "",
     Package = "",

@@ -61,3 +61,9 @@ keymap("n", "gr", ":require('telescope.builtin').lsp_references() <CR>", {silent
 -- Outline
 -----------------------------------------------------------------------
 cmd [[ nnoremap <C-o> :Vista nvim_lsp<CR> ]]
+
+-----------------------------------------------------------------------
+-- EasyAlign
+-----------------------------------------------------------------------
+cmd [[ nnoremap <C-d> :DogeGenerate<CR> ]]
+
