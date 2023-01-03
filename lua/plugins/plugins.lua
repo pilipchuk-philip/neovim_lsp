@@ -181,7 +181,10 @@ require("transparent").setup({
   'kkoomen/vim-doge',
    run = ':call doge#install()'
  }
-
+ -----------------------------------------------------------
+ -- Vim Sphinx intergration
+ -----------------------------------------------------------
+use 'stsewd/sphinx.nvim'
  -----------------------------------------------------------
  -- Which Key
  -----------------------------------------------------------
@@ -244,12 +247,6 @@ require("wilder").set_option('renderer', require("wilder").popupmenu_renderer(
 use({
     "glepnir/lspsaga.nvim",
     branch = "main",
-    config = function()
-        local saga = require("lspsaga")
-        saga.init_lsp_saga({
-            -- your configuration
-        })
-    end,
 })
 
  -----------------------------------------------------------

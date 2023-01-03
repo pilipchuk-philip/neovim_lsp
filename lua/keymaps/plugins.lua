@@ -30,15 +30,18 @@ cmd[[ nnoremap <silent>gd :lua vim.lsp.buf.definition()<CR> ]]
 -----------------------------------------------------------------------
 -- Hover Doc
 -----------------------------------------------------------------------
-vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+-- vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+
 -----------------------------------------------------------------------
 -- TODO
 -----------------------------------------------------------------------
 cmd [[ nmap <C-t> :TodoQuickFix<CR> ]]
+
 -----------------------------------------------------------------------
 -- TAGS
 -----------------------------------------------------------------------
 cmd[[ nnoremap <silent>s :SymbolsOutline<CR> ]]
+
 -----------------------------------------------------------------------
 -- GIT
 -----------------------------------------------------------------------
@@ -47,16 +50,23 @@ cmd[[ nnoremap <C-n> :Neogit<CR> ]]
 -----------------------------------------------------------------------
 -- [Telescope] Search
 -----------------------------------------------------------------------
-cmd [[ nnoremap <silent>gr :lua require('telescope.builtin').lsp_references()<CR> ]]
 cmd [[ nnoremap <C-p> :Telescope find_files<CR> ]]
 cmd [[ nnoremap <C-f> :Telescope live_grep<CR> ]]
 cmd [[ nnoremap <C-e> :Telescope buffers<CR> ]]
 cmd [[ nnoremap <C-g> :Telescope git_status<CR> ]]
 cmd [[ nnoremap <C-l> :Telescope git_status<CR> ]]
+
 -----------------------------------------------------------------------
 -- [Telescope] Find References
 -----------------------------------------------------------------------
-keymap("n", "gr", ":require('telescope.builtin').lsp_references() <CR>", {silent = true})
+cmd[[ nnoremap <silent>gr :lua require('telescope.builtin').lsp_references()<CR> ]]
+cmd[[ nnoremap <silent>K :Lspsaga hover_doc<CR> ]]
+
+-----------------------------------------------------------------------
+-- [LSP SAGA]
+-----------------------------------------------------------------------
+keymap({"n","v"}, "<CR>", "<cmd>Lspsaga code_action<CR>", { silent = true })
+
 -----------------------------------------------------------------------
 -- Outline
 -----------------------------------------------------------------------
