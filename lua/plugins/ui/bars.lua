@@ -90,3 +90,8 @@ require'bufferline'.setup {
   -- where X is the buffer number. But only a static string is accepted here.
   no_name_title = nil,
 }
+
+require("feline").setup()
+local navic = require("nvim-navic")
+vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+

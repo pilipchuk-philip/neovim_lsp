@@ -14,17 +14,12 @@ return require('packer').startup(function()
   use 'nvim-lua/plenary.nvim'
   -- NERDTree
   use {'preservim/nerdtree', }
+ -- Code tree left
+ use 'liuchengxu/vista.vim'
   -- Подсветка парных скобок
   use {'andymass/vim-matchup', event = 'VimEnter'}
   -- Нижняя панель
   use {'nvim-lualine/lualine.nvim',}
-  -- Верхняя панель
-  --[[ use {
-  'kdheepak/tabline.nvim',
-      requires = {
-          {'hoob3rt/lualine.nvim', opt=true },
-      }
-  } ]]
   -- TAGS панель
   use 'simrat39/symbols-outline.nvim'
   -- Считает кол-во совпадений при поиске
@@ -47,6 +42,8 @@ return require('packer').startup(function()
         }
       end
   }
+  -- Highlight Same
+  use 'RRethy/vim-illuminate'
   -------------------------------------------------
   -- Core Plugins
   -------------------------------------------------
@@ -64,7 +61,7 @@ return require('packer').startup(function()
   -----------------------------------------------------------
   use {
       'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    -- or                            , branch = '0.1.x',
+    -- or, branch = '0.1.x',
       requires = { {
       'nvim-lua/popup.nvim',
       'nvim-telescope/telescope-media-files.nvim'
@@ -115,43 +112,33 @@ return require('packer').startup(function()
     },
     config = function() require('plugins.cmp') end,
   })
-
  -------------------------------------------------
  -- Gist
  -------------------------------------------------
-  use 'mattn/vim-gist'
   use 'mattn/webapi-vim'
+  use 'mattn/vim-gist'
 
  -------------------------------------------------
  -- GIT
  -------------------------------------------------
- use 'liuchengxu/vista.vim'
- -------------------------------------------------
- -- GIT
- -------------------------------------------------
-  use 'TimUntersberger/neogit'
-  use 'lewis6991/gitsigns.nvim'
+  use 'TimUntersberger/neogit' -- Git Changes
+  use 'lewis6991/gitsigns.nvim' -- Git Blame
   use 'airblade/vim-gitgutter'
-  use 'tpope/vim-fugitive'
-  use 'sindrets/diffview.nvim'
+  use 'sindrets/diffview.nvim' -- Diff view
 
  -----------------------------------------------------------
- -- GO
- -----------------------------------------------------------
- use 'fatih/vim-go'
- -----------------------------------------------------------
- -- Navic
+ -- Navic [ Code Breadcrambs ]
  -----------------------------------------------------------
  use {
     "SmiteshP/nvim-navic",
     requires = "neovim/nvim-lspconfig"
  }
+
 use 'feline-nvim/feline.nvim'
-require("feline").setup()
+-- require("feline").setup()
 
-local navic = require("nvim-navic")
 
-vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+-- local navic = require("nvim-navic")
  -----------------------------------------------------------
  -- Tabs Barline
  -----------------------------------------------------------
@@ -184,32 +171,7 @@ require("transparent").setup({
  -- Vim Sphinx intergration
  -----------------------------------------------------------
 use 'stsewd/sphinx.nvim'
- -----------------------------------------------------------
- -- Which Key
- -----------------------------------------------------------
-use 'RRethy/vim-illuminate'
-require('illuminate').configure({
-     providers = {
-        'lsp',
-        'treesitter',
-        'regex',
-    },
-    delay = 100,
-    filetype_overrides = {},
-    filetypes_denylist = {
-        'dirvish',
-        'fugitive',
-    },
-    filetypes_allowlist = {},
-    modes_denylist = {},
-    modes_allowlist = {},
-    providers_regex_syntax_denylist = {},
-    providers_regex_syntax_allowlist = {},
-    under_cursor = true,
-    large_file_cutoff = nil,
-    large_file_overrides = nil,
-    min_count_to_highlight = 1,
-})
+
 ------------------------------------------------------------
 -- Wilder
 ------------------------------------------------------------
@@ -248,7 +210,7 @@ use({
     branch = "main",
 })
  -----------------------------------------------------------
- -- Barbecue
+ -- Barbecue  ?? IS IT NAVIC COPY?
  -----------------------------------------------------------
  use {
   "utilyre/barbecue.nvim",
