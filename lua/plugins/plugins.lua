@@ -153,9 +153,8 @@ local navic = require("nvim-navic")
 
 vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
  -----------------------------------------------------------
- -- Tabline
+ -- Tabs Barline
  -----------------------------------------------------------
-
 use {'romgrk/barbar.nvim', wants = 'nvim-web-devicons'}
  -----------------------------------------------------------
  -- NVIM Transporent
@@ -248,7 +247,6 @@ use({
     "glepnir/lspsaga.nvim",
     branch = "main",
 })
-
  -----------------------------------------------------------
  -- Barbecue
  -----------------------------------------------------------

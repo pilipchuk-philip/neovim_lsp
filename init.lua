@@ -16,6 +16,7 @@ require('plugins.snippets.snippets')
 require('plugins.ui.fidget')
 require('plugins.code.lsp_saga')
 require('plugins.ui.gitsings')
+require('plugins.ui.barbar')
 require('plugins.ui.trouble')
 require('plugins.ui.vista')
 
